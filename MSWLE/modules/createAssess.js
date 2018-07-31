@@ -163,7 +163,7 @@ function createAssessment_Callback(status, CreateAssessment){
 
 function primaryContractorSearch() {
   var searchValue = frmPrimaryContractor.txtSearchPrimaryContractor.text.trim();
-  if (searchValue.length > 3) {
+  if (searchValue.length > 2) {
     getPrimaryContractors(searchValue);
   }
 }

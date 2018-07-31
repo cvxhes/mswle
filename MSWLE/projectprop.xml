@@ -145,7 +145,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1532986866622"/>
+    <attributes name="lastmodifiedtime" value="1533045666424"/>
     <attributes name="ipad_notificationicon_1x_20" value=""/>
     <attributes name="hybridhttpsportkey" value=""/>
     <attributes name="iphone_spotlighticon_2x_40" value=""/>
@@ -698,7 +698,7 @@
     <attributes name="wp10codeGeneration" value="false"/>
     <attributes name="bluetooth" value="false"/>
     <attributes name="apmappload" value="false"/>
-    <attributes name="build" value="debug"/>
+    <attributes name="build" value="release"/>
     <attributes name="ANDROIDWEAR_WRITE_SYNC_SETTINGS" value="false"/>
     <attributes name="spaandroidtab800basefontsize" value="17"/>
     <attributes name="defaultlocalekey" value=""/>

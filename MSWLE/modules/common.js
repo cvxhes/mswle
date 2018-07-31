@@ -811,7 +811,7 @@ function prepareMailTemplate(){
 
   }else if(category == "fieldverification"){
 
-    engagementDesc ="Field Verificatoin: "+assessmentId;
+    engagementDesc ="Field Verification: "+assessmentId;
 
   }else if(category == "ptw"){
 

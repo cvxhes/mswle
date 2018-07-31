@@ -3,8 +3,8 @@
 gblOptionalFlag = "false";
 var accToken,givenName,familyName,expiresOn = "";
 function invokeMSAuthApp(){
-//    callLogin("NAJR");
-//    return;
+//   callLogin("NAJR");
+//   return;
   try {
     
     if(networkAvailable() === true){
