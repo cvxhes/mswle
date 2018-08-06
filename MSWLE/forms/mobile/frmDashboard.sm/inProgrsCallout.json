@@ -47,7 +47,7 @@
     "enablescrolling": true,
     "id": "inProgrsCallout",
     "info": null,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "c82ccdfd5bf441b9b25cec3933b49691",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",

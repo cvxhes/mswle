@@ -30,8 +30,8 @@ function invokeMSAuthApp(){
       "authority" : "https://login.windows.net/chevron.onmicrosoft.com",
       "validateAuthority" : true,
       "resourceId" : "https://graph.windows.net",
-      "clientId" : "63e23480-3932-4170-bdf9-50035f6b2e9c", //azure active directory application id //prod - 56020f20-0f07-47e6-9054-a9264f06bcdb //stg - 63e23480-3932-4170-bdf9-50035f6b2e9c dev - f8f9b950-f224-4896-b7b8-455d6e8b6180
-      "redirectUri" : "x-msauth-com-chevron-hes-mswle://com.chevron.hes.mswle"
+      "clientId" : "f8f9b950-f224-4896-b7b8-455d6e8b6180", //azure active directory application id //prod - 56020f20-0f07-47e6-9054-a9264f06bcdb //stg - 63e23480-3932-4170-bdf9-50035f6b2e9c dev - f8f9b950-f224-4896-b7b8-455d6e8b6180
+      "redirectUri" : "x-msauth-com-chevron-hes-mswler2://com.chevron.hes.mswler2"
     }, function(result){
       kony.print("Success");
       kony.print(JSON.parse(result)); 
@@ -106,6 +106,7 @@ function validateMSTokenCallback(status,ValidateToken){
       if(ValidateToken["opstatus"] == 0 && ValidateToken["version"] == "" ){
         var user_attributes = ValidateToken.user_attributes ;
         emailAddress = user_attributes[0].emailAddress;
+        kony.store.setItem("emailAddress", emailAddress);
         var FirstName = user_attributes[0].FirstName;
         var LastName = user_attributes[0].LastName;
         var Name = user_attributes[0].Name;

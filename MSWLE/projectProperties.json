@@ -20,7 +20,7 @@
         "useGlobalCordova": false
     },
     "desktopwebaligenmentoption": "Left",
-    "appversionkey": "1.0.0",
+    "appversionkey": "1.1.0",
     "desktopwebwidthoption": "percentage",
     "project.type": "js",
     "startupformkey": "a76bdd33eba6454e8f788291e44c8c8e",
@@ -178,7 +178,7 @@
     "enableResponsive": false,
     "appaddrkey": "",
     "tabletstartupformkey": "",
-    "appnamekey": "CHESM MSWLE",
+    "appnamekey": "R2 UAT CHESM MSWLE",
     "currentgaversion": "8.2.1",
     "enableCordova": false,
     "wap_bb320_fontsize": "15",

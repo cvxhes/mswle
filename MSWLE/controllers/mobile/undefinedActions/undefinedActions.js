@@ -26,4 +26,10 @@ define({
         frmSite.segSites.setData([]);
         leftSelSite();
     }
+});61(eventobject) {
+        var self = this;
+        return checkNetworkAndSync.call(this);
+    }
+}); flxHdrTitle.flxSettingBtn.setVisibility(true);
+    }
 });

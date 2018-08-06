@@ -54,6 +54,11 @@ function loginCallback(status, Login) {
           firstName =Login.FirstName;
           lastName = Login.LastName;
           userName = Login.Username;
+          
+          kony.store.setItem("firstName", firstName);//added
+          kony.store.setItem("lastName", lastName);//added
+          kony.store.setItem("userid", userid);//added
+          
           var sPTokenDate = new Date();
           var sPTokenTime = sPTokenDate.getTime();
           kony.print(Authorization);

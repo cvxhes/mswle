@@ -36,6 +36,10 @@ function checkNetworkAndSync(){
       callPopup("Please connect your device internet for authentication");
     }else {
       Authorization = kony.store.getItem("spToken");
+      firstName = kony.store.getItem("firstName");//added
+      lastName = kony.store.getItem("lastName");//added
+      userid = kony.store.getItem("userid");//added
+      emailAddress = kony.store.getItem("emailAddress");//added
       frmDashboard.lblUserName.text = "Welcome "+kony.store.getItem("givenName")+" "+kony.store.getItem("familyName");
       frmDashboard.show();
     }
@@ -54,6 +58,10 @@ function checkNetworkAndSync(){
       }else{
         //alert("Not Expired");
         Authorization = kony.store.getItem("spToken");
+        firstName = kony.store.getItem("firstName");//added
+        lastName = kony.store.getItem("lastName");//added
+        userid = kony.store.getItem("userid");//added
+        emailAddress = kony.store.getItem("emailAddress");//added
         if(Authorization){
           frmDashboard.lblUserName.text = "Welcome "+kony.store.getItem("givenName")+" "+kony.store.getItem("familyName");
           frmDashboard.show();
@@ -867,12 +875,15 @@ function prepareMailTemplate(){
 
   //alert("8888");
 
-  var scoreSection="";
-  var scoreName=currAsst.UdfFields["MSW_VV_SCOREID"].Value.Name;
-  if (scoreName == "[NONE]") scoreName = "";
+  
   if(category == "fieldverification" || category == "chesmfv"){
-
+	
     if(currAsst.UdfFields["MSW_VV_SCOREID"].Value!=null && currAsst.UdfFields["MSW_VV_SCOREID"].Value!=undefined){
+      
+      var scoreSection="";
+      var scoreName=currAsst.UdfFields["MSW_VV_SCOREID"].Value.Name;
+      if (scoreName == "[NONE]") scoreName = "";
+      
       scoreSection="<tr><td>Score and Summary:</td>"+
 
         "<td>"+scoreName+"</td>"+

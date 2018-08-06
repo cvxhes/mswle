@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "s8051e1250c44083b69caa9b29a54b36",
-    "_text_": "V 1.0.0",
+    "_text_": "V 1.1.0",
     "_top_": {
         "type": "string",
         "value": "11dp"
@@ -60,6 +60,7 @@
     "name": "kony.ui.Label",
     "parent": "FlexContainer0d27c1345a10b49",
     "pf": "footerSubmit",
+    "textstyle": {},
     "tooltip": "",
     "wType": "Label",
     "zindex": 1
