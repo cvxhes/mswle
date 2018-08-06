@@ -558,14 +558,16 @@ function formNavNext(){ //alert("engId: "+engId+"\nassessmentId "+assessmentId);
     if (category == "fieldverification" || category == "chesmfv"){
       if(frmForm2.cbxSpecializedActivity.selectedKeys==null || frmForm2.cbxSpecializedActivity.selectedKeys.length==0 || 
          frmForm2.cbxSpecializedActivity.selectedKeys==undefined){
-        callPopup("You have not selected any activity. Atleast one activity must be selected before proceeding.");
+        callPopup("You must select at least one of the JSA, PTW, SSE or EM options as listed under the specialized activities.");
         return false;
 
       }else{
         if(frmForm2.cbxSpecializedActivity.selectedKeys.indexOf("1607")<0 && frmForm2.cbxSpecializedActivity.selectedKeys.indexOf("1608")<0 &&
            frmForm2.cbxSpecializedActivity.selectedKeys.indexOf("1609")<0 && frmForm2.cbxSpecializedActivity.selectedKeys.indexOf("1610")<0){
-          popupYesNo.lblPopTxt.text="Atleast one of the JSA,PTW,SSE, or EM sections have not been selected. Are you sure you want to continue?";
-          popupYesNo.show();
+          callPopup("You must select at least one of the JSA, PTW, SSE or EM options as listed under the specialized activities.");
+          return false;
+          //           popupYesNo.lblPopTxt.text="At least one of the JSA,PTW,SSE or EM sections have not been selected. Are you sure you want to continue?";
+          //           popupYesNo.show();
 
         }else{
           SaveForm2("Next");
@@ -758,7 +760,7 @@ function prepareMailTemplate(){
 
   var engagementType =assessmentTypeName;
 
- // var workcrew = null;
+  // var workcrew = null;
   var workcrewDesc="";
 
   var specializedCategoryDesc ="";
@@ -790,7 +792,7 @@ function prepareMailTemplate(){
     }
 
   }
-   //alert("222222");
+  //alert("222222");
 
 
   if(frmForm2.cbxWorkCrew.selectedKey==1){
@@ -848,7 +850,7 @@ function prepareMailTemplate(){
 
 
   //alert("7777");
-  
+
   var permitSection="";
   if(category == "ptw"){
     permitSection="<tr><td>Permit number:</td>"+
@@ -862,17 +864,19 @@ function prepareMailTemplate(){
 
       "</tr>";
   }
-  
+
   //alert("8888");
-  
+
   var scoreSection="";
-  var scoreID="";
+  var scoreName=currAsst.UdfFields["MSW_VV_SCOREID"].Value.Name;
+  if (scoreName == "[NONE]") scoreName = "";
   if(category == "fieldverification" || category == "chesmfv"){
 
     if(currAsst.UdfFields["MSW_VV_SCOREID"].Value!=null && currAsst.UdfFields["MSW_VV_SCOREID"].Value!=undefined){
       scoreSection="<tr><td>Score and Summary:</td>"+
 
-        "<td>"+currAsst.UdfFields["MSW_VV_SCOREID"].Value.Id+"</td>"+
+        "<td>"+scoreName+"</td>"+
+        "<td>"+currAsst.UdfFields["MSW_UDF_FV_OTHER_comments"].Value+"</td>"+
 
         "</tr>"
     }else{
@@ -884,44 +888,44 @@ function prepareMailTemplate(){
     }
 
   }
-  
+
   //alert("99999");
-  
+
   var primaryContractorName="";
   if(currAsst.UdfFields.primarycompanyid!==null){
-      if(currAsst.UdfFields.primarycompanyid.Value!==null && currAsst.UdfFields.primarycompanyid.Value!==undefined){
+    if(currAsst.UdfFields.primarycompanyid.Value!==null && currAsst.UdfFields.primarycompanyid.Value!==undefined){
       if(currAsst.UdfFields.primarycompanyid.Value.Name!==null){
-          primaryContractorName= currAsst.UdfFields.primarycompanyid.Value.Name;
+        primaryContractorName= currAsst.UdfFields.primarycompanyid.Value.Name;
       }
 
     }
   }
-  
-  
+
+
   //alert("11 after  primaryContractorName "+currAsst.UdfFields.primarycompanyid);
-  
-   //alert("22 after  primaryContractorName "+currAsst.UdfFields.primarycompanyid.Value);
-  
-   //alert("33 after  primaryContractorName "+currAsst.UdfFields.primarycompanyid.Value.Name);
-  
-  
+
+  //alert("22 after  primaryContractorName "+currAsst.UdfFields.primarycompanyid.Value);
+
+  //alert("33 after  primaryContractorName "+currAsst.UdfFields.primarycompanyid.Value.Name);
+
+
   //alert("110 10 10 "+currAsst.UdfFields.mswspecificlocation.Value);
-  
+
   //alert("11 11 11 "+currAsst.UdfFields.timeofdayid.Value.Name);
-  
+
   //alert("12 12 12 "+currAsst.UdfFields.workforcetypeid.Value.Name);
-  
+
   //alert("13 13 13 "+workcrewDesc);
-  
+
   //alert("14 14 14 "+ primaryContractorName);
-  
+
   //alert("15 15 15 "+currAsst.UdfFields.mswsubcontractorname.Value);
-  
+
   //alert("16 16 16 "+ specializedCategoryDesc);
-  
+
   //alert("11 11 11 "+ permitSection );
-  
-  
+
+
   var mailBody="<html><head></head><body><table cellspacing=\"10px\" align=\"center\"><th>"+engagementDesc+"</th>"+
 
       "<tr><td>Engagement Location:</td>"+
@@ -1134,7 +1138,7 @@ function prepareSectionC(){
 
 
   }
- //alert("6666");
+  //alert("6666");
   return sectionCDesc;
 
 }

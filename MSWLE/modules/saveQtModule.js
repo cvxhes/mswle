@@ -125,6 +125,7 @@ function saveSelQt(source){
 var score = null;
 function onSelectScore(obj) {
   score = frmDynamicJSA1.lbScore.selectedKey;
-  currAsst.UdfFields.MSW_VV_SCOREID.Value = {"Id":score, "Name":""};
+  var arrScore = frmDynamicJSA1.lbScore.selectedKeyValue;
+  if (arrScore !== null) currAsst.UdfFields.MSW_VV_SCOREID.Value = {"Id":arrScore[0], "Name":arrScore[1]};
 
 }

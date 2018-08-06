@@ -34,8 +34,8 @@ function invokeMSAuthApp(){
       "redirectUri" : "x-msauth-com-chevron-hes-mswle://com.chevron.hes.mswle"
     }, function(result){
       kony.print("Success");
-      kony.print(JSON.parse(result));
-      var jsObj = JSON.parse(result[0]);
+      kony.print(JSON.parse(result)); 
+      var jsObj = JSON.parse(result[0]); 
       kony.print(jsObj.accessToken)
       kony.print("jsObj  "+JSON.stringify(jsObj));
       //alert(JSON.stringify(jsObj));

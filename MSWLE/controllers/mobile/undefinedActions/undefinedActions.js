@@ -2,23 +2,28 @@ define({
     /*
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
-    /** onTextChange defined for txtSearchPrimaryContractor **/
-    AS_TextField_gd4ac7922ab4480cb3bec8b294da0603: function AS_TextField_gd4ac7922ab4480cb3bec8b294da0603(eventobject, changedtext) {
+    /** onClick defined for headerSegSiteLeft **/
+    AS_Button_g0c65d58a35b4ca09615817a1330d3b2: function AS_Button_g0c65d58a35b4ca09615817a1330d3b2(eventobject) {
         var self = this;
-        return primaryContractorSearch.call(this);
+        return leftSelSite.call(this);
     },
-    /** onRowClick defined for segPriContractor **/
-    AS_Segment_e1b82bf6e8f44e90b848db8080f326ec: function AS_Segment_e1b82bf6e8f44e90b848db8080f326ec(eventobject, sectionNumber, rowNumber) {
+    /** onClick defined for headerSegSiteRIght **/
+    AS_Button_e96a43f7e1db4ba3b594b757e9f276b1: function AS_Button_e96a43f7e1db4ba3b594b757e9f276b1(eventobject) {
         var self = this;
-        var ntf = new kony.mvc.Navigation("frmIncompLst");
-        ntf.navigate();
+        return rightSelSite.call(this);
     },
-    /** preShow defined for frmPrimaryContractor **/
-    AS_Form_j562c7230e5c44038e66007651cbebbe: function AS_Form_j562c7230e5c44038e66007651cbebbe(eventobject) {
+    /** onTextChange defined for txtSearchSeg **/
+    AS_TextField_d151545e6827498eb3a8e51fec76724c: function AS_TextField_d151545e6827498eb3a8e51fec76724c(eventobject, changedtext) {
         var self = this;
-        flxHdrTitle.lblHdrTitle.text = "Primary Contractors";
-        frmPrimaryContractor.txtSearchPrimaryContractor.text = "";
-        frmPrimaryContractor.segPriContractor.setData([]);
+        return onTextChanSitesSearch.call(this);
+    },
+    /** preShow defined for frmSite **/
+    AS_Form_adc66677a07747279efbe4cd81772d80: function AS_Form_adc66677a07747279efbe4cd81772d80(eventobject) {
+        var self = this;
+        flxHdrTitle.lblHdrTitle.text = "Sites";
         flxHdrTitle.flxSettingBtn.setVisibility(false);
+        frmSite.txtSearchSeg.text = "";
+        frmSite.segSites.setData([]);
+        leftSelSite();
     }
 });
